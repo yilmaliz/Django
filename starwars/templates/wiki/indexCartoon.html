@@ -1,0 +1,30 @@
+{% extends 'wiki/base.html'%}
+
+
+{% block title %}
+<div class="row">
+    {% for mov in movie %}
+    <div class="card mb-2 col-md-4">
+        <h6 class="card-header">{{ mov.Name }}</h6>
+        <div class="card-text">
+            <img class="card-img-top " src="/media/{{ mov.Photo }}"/>
+            <div class="card-body">
+                <h6>
+                    <p class="card-text">
+                        <p>Director: {{ mov.DirectorName }}</p>
+                        <p>Release Date: {{ mov.Year }}</p>
+                        <p>IMDB Point: {{ mov.ImdbPoint }}</p>
+                        <p>Trailer Link: <a href="{{ mov.TrailerLink }}" > {{ mov.TrailerLink }} </a></p>
+
+
+                    </p></h6>
+
+            </div>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'wiki/base.html'%}
+
+{% block title %}
+
+<div align="center">
+    <h1>Most Known Star Wars Video Games</h1>
+</div>
+
+
+{% endblock %}
+
+{% block body %}
+<table>
+    <style>
+    table, th, td {
+        border: 3px solid black;
+        font-size: 14px;
+
+    }
+
+    </style>
+
+    <tr>
+        <th>   </th>
+        {% for g in games %}
+            <td> <img src="/media/{{ g.Photo }}" width="120" height="150" /></td>
+        {% endfor %}
+
+
+    </tr>
+
+    <tr>
+        <th>Game Name</th>
+        {% for g in games %}
+            <td>{{ g.Name }}</td>
+        {% endfor %}
+
+
+    </tr>
+
+    <tr>
+        <th>Publisher</th>
+        {% for g in games %}
+            <td>{{ g.Publisher }}</td>
+        {% endfor %}
+
+    </tr>
+
+    <tr>
+        <th>Release Date</th>
+        {% for g in games %}
+            <td>{{ g.Year}}</td>
+        {% endfor %}
+
+    </tr>
+
+    <tr>
+        <th>Game Page</th>
+        {% for g in games %}
+            <td><a href="{{ g.GamePage  }}" > Click Here </a></td>
+        {% endfor %}
+
+    </tr>
+
+
+    </tbody>
+</table>
+{% endblock %}

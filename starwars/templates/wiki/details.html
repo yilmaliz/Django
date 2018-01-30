@@ -1,0 +1,26 @@
+{% extends 'wiki/base.html'%}
+
+{% block body %}
+<div class="row">
+<div class="col-md-3">
+    <h4 class="card-header">{{ object.Name }}</h4>
+    <div class="card-text">
+        <img class="card-img-top " src="/media/{{ object.Photo }}"/>
+        <div class="card-body">
+            <h6>
+                <p>Race: {{object.Race}} </p>
+                <p>Job: {{object.Job}}</p></h6>
+        </div>
+    </div>
+    <div class="card-footer">
+
+    </div>
+</div>
+
+<div class="col-md-9">
+    <div>
+        <p style="font-size: 20px">{{object.Text}}</p>
+    </div>
+</div>
+    </div>
+{% endblock %}

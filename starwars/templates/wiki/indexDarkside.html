@@ -1,0 +1,29 @@
+{% extends 'wiki/base.html'%}
+
+
+{% block title %}
+<div align="center"> Dark Side </div>{% endblock %}
+
+{% block body %}
+<div class="row">
+    {% for character in char %}
+    <div class="card mb-5 col-md-3">
+        <h4 class="card-header">{{ character.Name }}</h4>
+        <div class="card-text">
+            <img class="card-img-top " src="/media/{{ character.Photo }}"/>
+            <div class="card-body">
+                 <h6>
+                <p>Race: {{character.Race}} </p>
+                <p>Job: {{character.Job}}</p></h6>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'detail' character.pk %}" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
